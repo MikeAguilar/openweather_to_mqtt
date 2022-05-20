@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  api_to_broker:
+    image: openweather-tracker
+    build: .
+    restart: always
+    volumes:
+      - './app:/app'
