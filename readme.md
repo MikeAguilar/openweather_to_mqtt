@@ -1,14 +1,11 @@
 # OpenWeather API to MQTT
- Get OpenWeather API data and send it to MQTT Broker
-#
+This is a Python application that uses OpenWeather API to get current weather information and publishes it to an MQTT Broker. 
 
-## Brief
-
-This is a Python application that runs from a Docker container. It gets weather information from the OpenWeather API (free key required) and will publish Temperature and Humidity individual messages to an MQTT Broker to be distributed and stored in a database (this is requires a separate Bridge to collect the MQTT messages and store them into an InfluxDB table).
+Note that the **OpenWeather API** requires a key, however, they do have a free tier, which is what I use for testing.
 
 ## Features
-- Collect current weather info from OpenWeather API
-- Publish MQTT messages for Temperature, Humidity and Pressure
+- Collect current weather info from OpenWeather API for a specified city.
+- Publish MQTT messages for Temperature, Humidity and Pressure to a specified MQTT broker.
 
 ## Important files
 - `./docker-compose.yml`
@@ -54,13 +51,14 @@ This is a Python application that runs from a Docker container. It gets weather 
 - `topic_pres` = "home/openweather-tracker/`device_name`/`city`/pressure"
 </br> Note that the topics will be populated by **default** as presented above. Only change them if absolutely necessary.
 
-## How to run it
-The `docker-compose` command will build the Docker image for you using the included `dockerfile`. 
+## Instructions to run it
+In this example, Docker Compose will build the Docker image using the included `dockerfile` and application.
+
 - Download the project from Github to a machine with Docker and Docker Compose installed.
 
-- Modify the `example-config.py` file with your own information and rename it to `config.py`
+- From the CLI, change to the directory where you downloaded the repository `openweather_to_mqtt` to.
 
-- From the CLI, change to the directory `openweather_to_mqtt`.
+- Modify the `example-config.py` file with your own information and rename it to `config.py`
 
 - **Start** the application with `docker-compose`
     ```

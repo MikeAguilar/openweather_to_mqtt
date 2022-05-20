@@ -20,7 +20,7 @@ mqtt_user = "your-mqtt-user"
 mqtt_pass = "your-mqtt-user-password"
 
 # MQTT Publishing Details
-topic_temp = "home/openweather-tracker/" + device_name + "/" + city.replace(" ", "") + "/temperature"
-topic_hum  = "home/openweather-tracker/" + device_name + "/" + city.replace(" ", "") + "/humidity"
-topic_pres = "home/openweather-tracker/" + device_name + "/" + city.replace(" ", "") + "/pressure"
+topic_temp = "home/openweather-tracker/" + device_name.replace(" ", "") + "/" + city.replace(" ", "") + "/temperature"
+topic_hum  = "home/openweather-tracker/" + device_name.replace(" ", "") + "/" + city.replace(" ", "") + "/humidity"
+topic_pres = "home/openweather-tracker/" + device_name.replace(" ", "") + "/" + city.replace(" ", "") + "/pressure"
 
