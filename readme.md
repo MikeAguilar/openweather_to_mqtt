@@ -1,7 +1,9 @@
 # OpenWeather API to MQTT
-This is a Python application that uses OpenWeather API to get current weather information and publishes it to an MQTT Broker. 
+This is a Python application running in a Docker container that uses OpenWeather API to get the current weather information and publishes it to an MQTT Broker. 
 
-Note that the **OpenWeather API** requires a key, however, they do have a free tier, which is what I use for testing.
+### Important Considerations
+- The **OpenWeather API** requires a key, however, they do have a free tier, which is what I use for testing.
+- The connection to the MQTT broker is via HTTP, consider the security implications when publishing over the public Internet.
 
 ## Features
 - Collect current weather info from OpenWeather API for a specified city.
